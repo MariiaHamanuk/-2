@@ -15,6 +15,7 @@ class MyQueue(object):
         """
         :rtype: int
         """
+
         if not self.out:
             while self.inn:
                 self.out.append(self.inn.pop())
