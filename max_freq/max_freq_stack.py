@@ -16,6 +16,7 @@ class FreqStack(object):
         :type val: int
         :rtype: None
         """
+
         if val not in self.frequenc:
             self.frequenc[val] = 0
         self.frequenc[val] += 1
