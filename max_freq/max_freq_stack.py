@@ -6,7 +6,7 @@ class FreqStack(object):
     freq
     '''
     def __init__(self):
-        self.freq = {}
+        self.frequenc = {}
         self.group = {}
         self.max_freq = 0
 
@@ -16,25 +16,35 @@ class FreqStack(object):
         :type val: int
         :rtype: None
         """
-        if val not in self.freq:
-            self.freq[val] = 0
-        self.freq[val] += 1
-        f = self.freq[val]
+        if val not in self.frequenc:
+            self.frequenc[val] = 0
+        self.frequenc[val] += 1
 
-        if f not in self.group:
-            self.group[f] = []
-        self.group[f].append(val)
+        fr = self.frequenc[val]
 
-        if f > self.max_freq:
-            self.max_freq = f
+        if fr not in self.group:
+            self.group[fr] = []
+
+        self.group[fr].append(val)
+
+        if fr > self.max_freq:
+            self.max_freq = fr
 
     def pop(self):
         """
         :rtype: int
         """
-        val = self.group[self.max_freq].pop()
-        self.freq[val] -= 1
+        value = self.group[self.max_freq].pop() # not peek!!!!
+
+        self.frequenc[value] -= 1
         if not self.group[self.max_freq]:
+
+
             del self.group[self.max_freq]
             self.max_freq -= 1
-        return val
+        return value
+
+# Your FreqStack object will be instantiated and called as such:
+# obj = FreqStack()
+# obj.push(val)
+# param_2 = obj.pop()
