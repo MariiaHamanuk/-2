@@ -1,3 +1,6 @@
+'''
+implements stack using q
+'''
 import collections
 
 class MyStack(object):
