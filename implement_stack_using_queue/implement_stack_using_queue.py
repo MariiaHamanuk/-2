@@ -16,6 +16,7 @@ class MyStack(object):
         :type x: int
         :rtype: None
         """
+
         # self.queue2.append(x)
         # while self.queue1:
         #     self.queue2.append(self.queue1.popleft())
